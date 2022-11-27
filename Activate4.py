@@ -1,5 +1,5 @@
 #'''
-#A01610903 José Rodrigo Hernández
+#Nadia Luna Rivas A01658134
 #'''
 #INSTRUCCIONES
 #'''
@@ -12,7 +12,6 @@
 #'''Librerias'''
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 
 #'''DataSet WalMart'''
 
@@ -22,7 +21,7 @@ import matplotlib.pyplot as plt
 #Basicos
 ny_lat_lon = [40.730610,-73.935242]
 apptitle = 'Mapa sobre viajes en uber para NY'
-descrip = 'En esta WebApp se podrá visualizar los viajes en uber en la ciudad de New York por hora.'
+descrip = 'En esta WebApp se podrán visualizar los viajes en uber en la ciudad de New York por hora.'
 
 @st.cache
 def load_d(nrows):
@@ -52,8 +51,8 @@ horFil = optionals.slider(
 
 )
 data_vis = data_UberC[(data_UberC['date/time'].dt.hour == horFil)]
-st.header(f'Mapa de recogias de Uber a las {horFil}:00 horas')
+st.header(f'Mapa de recogidas de Uber a las {horFil}:00 horas')
 st.map(data_vis)
 
-if st.checkbox('Visualizar Dataset?'):
+if st.checkbox('Visualizar Dataset'):
     st.dataframe(data_vis)
